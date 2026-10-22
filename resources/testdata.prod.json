@@ -1,0 +1,12 @@
+{
+	"baseUrl": "https://prod.saucedemo.com/",
+	"user": {
+		"username": "prod_user",
+		"password": "prod_sauce"
+	},
+	"checkout": {
+		"firstName": "ProdJohn",
+		"lastName": "ProdDoe",
+		"postalCode": "33333"
+	}
+}

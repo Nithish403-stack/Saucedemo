@@ -1,0 +1,12 @@
+{
+	"baseUrl": "https://stage.saucedemo.com/",
+	"user": {
+		"username": "stage_user",
+		"password": "stage_sauce"
+	},
+	"checkout": {
+		"firstName": "StageJohn",
+		"lastName": "StageDoe",
+		"postalCode": "22222"
+	}
+}
