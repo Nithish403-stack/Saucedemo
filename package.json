@@ -4,7 +4,7 @@
   "description": "Playwright automation project for saucedemo.com",
   "main": "index.js",
   "scripts": {
-    "pretest": "powershell -Command \"Remove-Item -Recurse -Force reports/playwright/screenshots/*; Remove-Item -Recurse -Force reports/playwright/traces/*\"",
+    "pretest": "powershell -Command \"if(Test-Path 'reports/playwright/screenshots'){Remove-Item -Recurse -Force reports/playwright/screenshots/*}; if(Test-Path 'reports/playwright/traces'){Remove-Item -Recurse -Force reports/playwright/traces/*}\"",
     "test": "cucumber-js && node scripts/generate-report.js",
     "report": "node scripts/generate-report.js",
     "test:headed": "cucumber-js --world-parameters headless=false && node scripts/generate-report.js",
