@@ -40,7 +40,7 @@ After(async function () {
   if (testCtx.page) {
     const scenarioName = this.pickle ? this.pickle.name.replace(/\s+/g, '_') : 'trace';
     const tracePath = `reports/playwright/traces/${Date.now()}_${scenarioName}.zip`;
-    await testCtx.page.context().tracing.stop({ path: tracePath });
+    //await testCtx.page.context().tracing.stop({ path: tracePath });
     await testCtx.page.close();
   }
   if (testCtx.context) await testCtx.context.close();
