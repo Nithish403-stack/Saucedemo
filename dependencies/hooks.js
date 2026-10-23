@@ -10,7 +10,8 @@ const testCtx = {
 };
 
 setDefaultTimeout(30 * 2000); // 60 seconds
-
+fs.mkdirSync('reports/playwright/screenshots', { recursive: true });
+fs.mkdirSync('reports/playwright/traces', { recursive: true });
 const config = require('../playwright.config');
 Before(async () => {
   testCtx.browser = await chromium.launch({ headless: config.use.headless });
