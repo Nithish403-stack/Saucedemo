@@ -24,11 +24,16 @@ Before(async () => {
 });
 
 AfterStep(async ({ result, pickle }) => {
-  if (testCtx.page) {
-    const screenshot = await testCtx.page.screenshot();
-    const fileName = `reports/playwright/screenshots/${Date.now()}_${pickle.name.replace(/\s+/g, '_')}.png`;
-    fs.writeFileSync(fileName, screenshot);
-  }
+try {
+if (result.status === 'FAILED' && testCtx.page) {
+const screenshot = await testCtx.page.screenshot();
+const fileName =
+`reports/playwright/screenshots/${Date.now()}_${pickle.name.replace(/\s+/g, '_')}.png`;
+fs.writeFileSync(fileName, screenshot);
+}
+} catch (error) {
+console.log('Screenshot capture failed:', error.message);
+}
 });
 
 After(async function () {
